@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — Home Keep Maintenance Tracker | Jenlee Technical Consultants</title>
+<meta name="description" content="Privacy Policy for Home Keep Maintenance Tracker. Your data stays on your device. We do not collect, share, or sell any personal information.">
+<style>
+  :root {
+    --brand: #512BD4;
+    --brand-dark: #3D1FA8;
+    --accent: #0EA5E9;
+    --bg: #FAFAFC;
+    --card: #FFFFFF;
+    --text: #1F1F23;
+    --text-soft: #6B6B73;
+    --border: #E5E5EC;
+    --divider: #ECECF1;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { -webkit-font-smoothing: antialiased; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.65;
+  }
+
+  /* Top bar */
+  .topbar {
+    background: linear-gradient(135deg, var(--brand) 0%, var(--brand-dark) 100%);
+    color: white;
+    padding: 14px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .brand { font-weight: 700; font-size: 15px; letter-spacing: 0.2px; }
+  .lang-toggle {
+    background: rgba(255,255,255,0.18);
+    border: none;
+    color: white;
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.15s ease;
+  }
+  .lang-toggle:hover { background: rgba(255,255,255,0.3); }
+
+  /* Hero */
+  .hero {
+    background: linear-gradient(135deg, var(--accent) 0%, #0284C7 100%);
+    color: white;
+    padding: 56px 24px;
+    text-align: center;
+  }
+  .hero .lock {
+    font-size: 48px;
+    line-height: 1;
+    margin-bottom: 16px;
+  }
+  .hero h1 {
+    font-size: 36px;
+    font-weight: 800;
+    margin-bottom: 6px;
+    letter-spacing: -0.5px;
+  }
+  .hero .sub {
+    font-size: 16px;
+    opacity: 0.92;
+    margin-bottom: 4px;
+  }
+  .hero .date {
+    font-size: 13px;
+    opacity: 0.75;
+    margin-top: 12px;
+  }
+
+  /* Main content card */
+  main {
+    max-width: 760px;
+    margin: -40px auto 0;
+    padding: 0 20px 60px;
+    position: relative;
+  }
+  .card {
+    background: var(--card);
+    border-radius: 18px;
+    border: 1px solid var(--border);
+    padding: 36px 32px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+  }
+  .summary {
+    background: #ECFEFF;
+    border-left: 4px solid var(--accent);
+    padding: 14px 18px;
+    border-radius: 8px;
+    margin-bottom: 32px;
+    font-size: 15px;
+    color: #0C4A6E;
+  }
+  .summary strong { font-weight: 700; }
+
+  section {
+    padding: 22px 0;
+    border-bottom: 1px solid var(--divider);
+  }
+  section:last-child { border-bottom: none; }
+  section h2 {
+    font-size: 18px;
+    font-weight: 800;
+    color: var(--text);
+    margin-bottom: 10px;
+    letter-spacing: -0.2px;
+  }
+  section p {
+    color: var(--text-soft);
+    font-size: 15px;
+    white-space: pre-wrap;
+  }
+
+  /* Footer */
+  footer {
+    background: #1F1F23;
+    color: #9CA3AF;
+    padding: 32px 24px;
+    text-align: center;
+    font-size: 13px;
+    line-height: 1.6;
+  }
+  footer .biz { color: white; font-weight: 600; margin-bottom: 4px; }
+  footer a { color: #C7D2FE; text-decoration: none; }
+  footer .links {
+    margin-top: 14px;
+    display: flex;
+    gap: 18px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  /* Mobile */
+  @media (max-width: 540px) {
+    .hero { padding: 40px 20px; }
+    .hero h1 { font-size: 28px; }
+    main { padding: 0 14px 40px; }
+    .card { padding: 24px 20px; }
+    section h2 { font-size: 16px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============== TOP BAR ============== -->
+<div class="topbar">
+  <div class="brand">🏠 Home Keep · Jenlee Technical Consultants</div>
+  <button class="lang-toggle" id="langBtn" onclick="toggleLang()">Español</button>
+</div>
+
+<!-- ============== HERO ============== -->
+<section class="hero">
+  <div class="lock">🔒</div>
+  <h1 data-en="Privacy Policy" data-es="Política de Privacidad">Privacy Policy</h1>
+  <div class="sub" data-en="Home Keep Maintenance Tracker" data-es="Home Keep Maintenance Tracker">Home Keep Maintenance Tracker</div>
+  <div class="date" data-en="Effective Date: June 2026" data-es="Fecha de vigencia: Junio 2026">Effective Date: June 2026</div>
+</section>
+
+<!-- ============== CONTENT ============== -->
+<main>
+  <div class="card">
+
+    <div class="summary"
+         data-en="<strong>Short version:</strong> Your data never leaves your phone. We do not collect, store, share, or sell any personal information. No account, no login, no tracking."
+         data-es="<strong>Resumen:</strong> Sus datos nunca salen de su teléfono. No recopilamos, almacenamos, compartimos ni vendemos información personal. Sin cuenta, sin inicio de sesión, sin rastreo.">
+      <strong>Short version:</strong> Your data never leaves your phone. We do not collect, store, share, or sell any personal information. No account, no login, no tracking.
+    </div>
+
+    <section>
+      <h2 data-en="1. We Do Not Collect Personal Information"
+          data-es="1. No Recopilamos Información Personal">1. We Do Not Collect Personal Information</h2>
+      <p data-en="Home Keep Maintenance Tracker does not collect, store, or transmit any personally identifiable information. We do not ask for your name, email address, or any personal details to use this app."
+         data-es="Home Keep Maintenance Tracker no recopila, almacena ni transmite ninguna información de identificación personal. No solicitamos su nombre, correo electrónico ni ningún dato personal para usar esta aplicación.">
+        Home Keep Maintenance Tracker does not collect, store, or transmit any personally identifiable information. We do not ask for your name, email address, or any personal details to use this app.
+      </p>
+    </section>
+
+    <section>
+      <h2 data-en="2. All Data Is Stored Locally on Your Device"
+          data-es="2. Todos los Datos Se Almacenan Localmente en Su Dispositivo">2. All Data Is Stored Locally on Your Device</h2>
+      <p data-en="All information you enter into this app — including your property address, appliance records, task history, and settings — is stored exclusively on your device. Your data never leaves your phone. We have no servers, no cloud storage, and no access to your information."
+         data-es="Toda la información que ingresa en esta aplicación — incluyendo la dirección de su propiedad, registros de electrodomésticos, historial de tareas y configuraciones — se almacena exclusivamente en su dispositivo. Sus datos nunca salen de su teléfono. No tenemos servidores, almacenamiento en la nube ni acceso a su información.">
+        All information you enter into this app — including your property address, appliance records, task history, and settings — is stored exclusively on your device. Your data never leaves your phone. We have no servers, no cloud storage, and no access to your information.
+      </p>
+    </section>
+
+    <section>
+      <h2 data-en="3. We Do Not Sell or Share Your Data"
+          data-es="3. No Vendemos ni Compartimos Sus Datos">3. We Do Not Sell or Share Your Data</h2>
+      <p data-en="We do not sell, share, rent, or transmit your data to any third party under any circumstances. Your home information is private and stays that way."
+         data-es="No vendemos, compartimos, alquilamos ni transmitimos sus datos a ningún tercero bajo ninguna circunstancia. La información de su hogar es privada y así permanecerá.">
+        We do not sell, share, rent, or transmit your data to any third party under any circumstances. Your home information is private and stays that way.
+      </p>
+    </section>
+
+    <section>
+      <h2 data-en="4. No Account or Login Required"
+          data-es="4. No Se Requiere Cuenta ni Inicio de Sesión">4. No Account or Login Required</h2>
+      <p data-en="This app requires no account creation, no login, and no registration. You can use the full app without providing any identity information."
+         data-es="Esta aplicación no requiere la creación de cuenta, inicio de sesión ni registro. Puede usar la aplicación completa sin proporcionar ninguna información de identidad.">
+        This app requires no account creation, no login, and no registration. You can use the full app without providing any identity information.
+      </p>
+    </section>
+
+    <section>
+      <h2 data-en="5. No Cookies or Tracking"
+          data-es="5. Sin Cookies ni Rastreo">5. No Cookies or Tracking</h2>
+      <p data-en="This app does not use cookies, tracking pixels, analytics SDKs, or any behavioral tracking technology. We do not monitor how you use the app."
+         data-es="Esta aplicación no utiliza cookies, píxeles de rastreo, SDKs de análisis ni ninguna tecnología de seguimiento de comportamiento. No monitoreamos cómo usa la aplicación.">
+        This app does not use cookies, tracking pixels, analytics SDKs, or any behavioral tracking technology. We do not monitor how you use the app.
+      </p>
+    </section>
+
+    <section>
+      <h2 data-en="6. No Third-Party Data Sharing"
+          data-es="6. Sin Compartición de Datos con Terceros">6. No Third-Party Data Sharing</h2>
+      <p data-en="We do not integrate with any advertising networks, data brokers, or third-party analytics services. Your usage of this app is not shared with or sold to any outside party."
+         data-es="No nos integramos con ninguna red publicitaria, intermediario de datos ni servicio de análisis de terceros. Su uso de esta aplicación no se comparte ni vende a ninguna parte externa.">
+        We do not integrate with any advertising networks, data brokers, or third-party analytics services. Your usage of this app is not shared with or sold to any outside party.
+      </p>
+    </section>
+
+    <section>
+      <h2 data-en="7. Apple App Store Data Collection"
+          data-es="7. Recopilación de Datos de la App Store de Apple">7. Apple App Store Data Collection</h2>
+      <p data-en="The Apple App Store may collect anonymous usage data (such as crash reports and download statistics) as part of Apple's standard platform policies. This data is collected by Apple — not by us — and is subject to Apple's own Privacy Policy."
+         data-es="La App Store de Apple puede recopilar datos de uso anónimos (como informes de fallos y estadísticas de descargas) como parte de las políticas estándar de la plataforma de Apple. Estos datos son recopilados por Apple, no por nosotros, y están sujetos a la Política de Privacidad de Apple.">
+        The Apple App Store may collect anonymous usage data (such as crash reports and download statistics) as part of Apple's standard platform policies. This data is collected by Apple — not by us — and is subject to Apple's own Privacy Policy.
+      </p>
+    </section>
+
+    <section>
+      <h2 data-en="8. Your Property Information Is Private"
+          data-es="8. La Información de Su Propiedad Es Privada">8. Your Property Information Is Private</h2>
+      <p data-en="We do not have access to your property address, home details, appliance information, or any other data you enter into this app. All of it is stored locally on your device and belongs entirely to you."
+         data-es="No tenemos acceso a la dirección de su propiedad, detalles del hogar, información de electrodomésticos ni ningún otro dato que ingrese en esta aplicación. Todo se almacena localmente en su dispositivo y le pertenece completamente a usted.">
+        We do not have access to your property address, home details, appliance information, or any other data you enter into this app. All of it is stored locally on your device and belongs entirely to you.
+      </p>
+    </section>
+
+    <section>
+      <h2 data-en="9. Children Under 13"
+          data-es="9. Menores de 13 Años">9. Children Under 13</h2>
+      <p data-en="This app is designed for homeowners and adults. Children under the age of 13 should use this app only with parental guidance and supervision. We do not knowingly collect any information from children."
+         data-es="Esta aplicación está diseñada para propietarios de viviendas y adultos. Los menores de 13 años deben usar esta aplicación solo con orientación y supervisión de los padres. No recopilamos información de menores de forma intencional.">
+        This app is designed for homeowners and adults. Children under the age of 13 should use this app only with parental guidance and supervision. We do not knowingly collect any information from children.
+      </p>
+    </section>
+
+    <section>
+      <h2 data-en="10. Updates to This Policy"
+          data-es="10. Actualizaciones de Esta Política">10. Updates to This Policy</h2>
+      <p data-en="We reserve the right to update this Privacy Policy at any time. Updates will be reflected in new versions of the app. Continued use of the app after any changes constitutes your acceptance of the updated policy."
+         data-es="Nos reservamos el derecho de actualizar esta Política de Privacidad en cualquier momento. Las actualizaciones se reflejarán en nuevas versiones de la aplicación. El uso continuado de la aplicación después de cualquier cambio constituye su aceptación de la política actualizada.">
+        We reserve the right to update this Privacy Policy at any time. Updates will be reflected in new versions of the app. Continued use of the app after any changes constitutes your acceptance of the updated policy.
+      </p>
+    </section>
+
+    <section>
+      <h2 data-en="11. Contact Us"
+          data-es="11. Contáctenos">11. Contact Us</h2>
+      <p data-en="If you have any questions about this Privacy Policy, please contact us at:&#10;&#10;Jenlee Technical Consultants&#10;jenleetechconslt@gmail.com"
+         data-es="Si tiene preguntas sobre esta Política de Privacidad, comuníquese con nosotros:&#10;&#10;Jenlee Technical Consultants&#10;jenleetechconslt@gmail.com">If you have any questions about this Privacy Policy, please contact us at:
+
+Jenlee Technical Consultants
+jenleetechconslt@gmail.com</p>
+    </section>
+
+  </div>
+</main>
+
+<!-- ============== FOOTER ============== -->
+<footer>
+  <div class="biz">Jenlee Technical Consultants</div>
+  <div data-en="Family-owned · Built by independent owners"
+       data-es="Empresa familiar · Construido por dueños independientes">Family-owned · Built by independent owners</div>
+  <div style="margin-top: 8px;">
+    <a href="mailto:jenleetechconslt@gmail.com">jenleetechconslt@gmail.com</a>
+  </div>
+  <div style="margin-top: 16px; opacity: 0.6;">
+    © 2026 Jenlee Technical Consultants · <span data-en="All rights reserved" data-es="Todos los derechos reservados">All rights reserved</span>
+  </div>
+</footer>
+
+<script>
+  // ── Language toggle ───────────────────────────────────────────
+  let currentLang = 'en';
+  function toggleLang() {
+    currentLang = currentLang === 'en' ? 'es' : 'en';
+    document.documentElement.lang = currentLang;
+    document.getElementById('langBtn').textContent = currentLang === 'en' ? 'Español' : 'English';
+
+    document.querySelectorAll('[data-en]').forEach(el => {
+      const newText = el.getAttribute('data-' + currentLang);
+      if (newText == null) return;
+      // The summary block contains HTML (the <strong> tag) so use innerHTML there.
+      if (el.classList && el.classList.contains('summary')) {
+        el.innerHTML = newText;
+      } else {
+        el.textContent = newText;
+      }
+    });
+  }
+</script>
+</body>
+</html>
