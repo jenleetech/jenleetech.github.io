@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Home Keep — Contractor Early Access | Jenlee Technical Consultants</title>
+<meta name="description" content="Join the contractor waitlist for Home Keep — a Florida homeowner-to-contractor marketplace that doesn't take 30% of your job.">
+<style>
+  :root {
+    --brand: #512BD4;
+    --brand-light: #6B45E0;
+    --brand-dark: #3D1FA8;
+    --accent: #F59E0B;
+    --bg: #FAFAFC;
+    --card: #FFFFFF;
+    --text: #1F1F23;
+    --text-soft: #6B6B73;
+    --border: #E5E5EC;
+    --good: #10B981;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { -webkit-font-smoothing: antialiased; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.55;
+  }
+
+  /* Top bar */
+  .topbar {
+    background: linear-gradient(135deg, var(--brand) 0%, var(--brand-dark) 100%);
+    color: white;
+    padding: 14px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .brand { font-weight: 700; font-size: 15px; letter-spacing: 0.2px; }
+  .lang-toggle {
+    background: rgba(255,255,255,0.18);
+    border: none;
+    color: white;
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.15s ease;
+  }
+  .lang-toggle:hover { background: rgba(255,255,255,0.3); }
+
+  /* Hero */
+  .hero {
+    background: linear-gradient(135deg, var(--brand) 0%, var(--brand-dark) 100%);
+    color: white;
+    padding: 56px 24px 80px;
+    text-align: center;
+  }
+  .pill {
+    display: inline-block;
+    background: rgba(255,255,255,0.18);
+    color: white;
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.4px;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+  }
+  .hero h1 {
+    font-size: 38px;
+    font-weight: 800;
+    line-height: 1.15;
+    max-width: 680px;
+    margin: 0 auto 16px;
+    letter-spacing: -0.5px;
+  }
+  .hero .lead {
+    font-size: 18px;
+    opacity: 0.92;
+    max-width: 600px;
+    margin: 0 auto 28px;
+  }
+  .hero .scroll-cue {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--accent);
+    color: #1F1F23;
+    padding: 14px 26px;
+    border-radius: 999px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 15px;
+    transition: transform 0.15s ease;
+  }
+  .hero .scroll-cue:hover { transform: translateY(-2px); }
+
+  /* Sections */
+  main { max-width: 760px; margin: 0 auto; padding: 56px 24px; }
+  .stat-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-top: -40px;
+    margin-bottom: 48px;
+  }
+  .stat {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 18px 12px;
+    text-align: center;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.05);
+  }
+  .stat .n {
+    font-size: 24px;
+    font-weight: 800;
+    color: var(--brand);
+    line-height: 1.1;
+  }
+  .stat .l {
+    font-size: 12px;
+    color: var(--text-soft);
+    margin-top: 4px;
+    letter-spacing: 0.2px;
+  }
+
+  h2 {
+    font-size: 26px;
+    font-weight: 800;
+    letter-spacing: -0.3px;
+    margin-bottom: 18px;
+  }
+  .compare {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin: 24px 0 48px;
+  }
+  .compare .col {
+    border-radius: 14px;
+    padding: 20px;
+    border: 1px solid var(--border);
+  }
+  .compare .them {
+    background: #FFF5F5;
+    border-color: #FED7D7;
+  }
+  .compare .us {
+    background: #ECFDF5;
+    border-color: #A7F3D0;
+  }
+  .compare h3 {
+    font-size: 15px;
+    margin-bottom: 12px;
+    font-weight: 700;
+  }
+  .compare .them h3 { color: #C53030; }
+  .compare .us h3 { color: var(--good); }
+  .compare ul { list-style: none; font-size: 14px; }
+  .compare li {
+    padding: 6px 0;
+    color: var(--text-soft);
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .compare li::before { content: ""; flex-shrink: 0; width: 16px; }
+  .compare .them li::before { content: "✕"; color: #C53030; font-weight: 700; }
+  .compare .us li::before { content: "✓"; color: var(--good); font-weight: 700; }
+
+  /* Form card */
+  .form-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 32px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+  }
+  .form-card .label {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-soft);
+    margin-bottom: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+  }
+  .form-row { margin-bottom: 18px; }
+  .form-card input, .form-card select {
+    width: 100%;
+    padding: 13px 14px;
+    border: 1.5px solid var(--border);
+    border-radius: 10px;
+    font-size: 15px;
+    font-family: inherit;
+    background: white;
+    color: var(--text);
+    transition: border-color 0.15s ease;
+  }
+  .form-card input:focus, .form-card select:focus {
+    outline: none;
+    border-color: var(--brand);
+  }
+  .form-card .grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  .submit {
+    width: 100%;
+    background: var(--brand);
+    color: white;
+    border: none;
+    padding: 16px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.15s ease;
+    margin-top: 8px;
+  }
+  .submit:hover { background: var(--brand-dark); }
+  .fineprint {
+    font-size: 12px;
+    color: var(--text-soft);
+    text-align: center;
+    margin-top: 14px;
+  }
+
+  /* Success state */
+  .success {
+    background: #ECFDF5;
+    border: 1px solid #A7F3D0;
+    border-radius: 14px;
+    padding: 24px;
+    text-align: center;
+    color: #065F46;
+    display: none;
+  }
+  .success.show { display: block; }
+  .success h3 { font-size: 20px; margin-bottom: 8px; }
+
+  /* Footer */
+  footer {
+    background: #1F1F23;
+    color: #9CA3AF;
+    padding: 32px 24px;
+    text-align: center;
+    font-size: 13px;
+    line-height: 1.6;
+  }
+  footer .biz { color: white; font-weight: 600; margin-bottom: 4px; }
+  footer a { color: #C7D2FE; text-decoration: none; }
+
+  /* Mobile tighten */
+  @media (max-width: 540px) {
+    .hero { padding: 40px 20px 64px; }
+    .hero h1 { font-size: 30px; }
+    .hero .lead { font-size: 16px; }
+    main { padding: 40px 20px; }
+    .compare { grid-template-columns: 1fr; }
+    .stat-row { grid-template-columns: 1fr; gap: 10px; }
+    .form-card { padding: 24px; }
+    .form-card .grid-2 { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============== TOP BAR ============== -->
+<div class="topbar">
+  <div class="brand">🏠 Home Keep · Jenlee Technical Consultants</div>
+  <button class="lang-toggle" id="langBtn" onclick="toggleLang()">Español</button>
+</div>
+
+<!-- ============== HERO ============== -->
+<section class="hero">
+  <div class="pill" data-en="LIMITED EARLY ACCESS" data-es="ACCESO ANTICIPADO LIMITADO">LIMITED EARLY ACCESS</div>
+  <h1 data-en="Get local jobs. Keep more of your money."
+      data-es="Consigue trabajos locales. Quédate con más de tu dinero.">
+    Get local jobs. Keep more of your money.
+  </h1>
+  <p class="lead"
+     data-en="A Florida-built homeowner-to-contractor marketplace that doesn't take 30%. The first 50 contractors get lifetime reduced fees."
+     data-es="Una plataforma hecha en Florida que conecta dueños de casa con contratistas — sin el 30% de comisión. Los primeros 50 contratistas reciben tarifas reducidas de por vida.">
+    A Florida-built homeowner-to-contractor marketplace that doesn't take 30%. The first 50 contractors get lifetime reduced fees.
+  </p>
+  <a href="#signup" class="scroll-cue"
+     data-en="Reserve my spot →" data-es="Reservar mi lugar →">Reserve my spot →</a>
+</section>
+
+<!-- ============== MAIN ============== -->
+<main>
+
+  <!-- stat row -->
+  <div class="stat-row">
+    <div class="stat">
+      <div class="n">10–15%</div>
+      <div class="l" data-en="Our fee — no 30% cuts" data-es="Nuestra comisión">Our fee — no 30% cuts</div>
+    </div>
+    <div class="stat">
+      <div class="n">50</div>
+      <div class="l" data-en="Founding contractor spots" data-es="Lugares de contratista fundador">Founding contractor spots</div>
+    </div>
+    <div class="stat">
+      <div class="n">FL</div>
+      <div class="l" data-en="Florida-owned & built" data-es="De Florida, hecho aquí">Florida-owned & built</div>
+    </div>
+  </div>
+
+  <!-- Compare -->
+  <h2 data-en="Why we built it" data-es="Por qué lo construimos">Why we built it</h2>
+  <p style="color: var(--text-soft); margin-bottom: 24px;"
+     data-en="We're tired of the same story: a homeowner needs help, types into a giant lead-gen site, and you end up paying $40–60 per lead — for jobs that ghost you half the time."
+     data-es="Estamos cansados de la misma historia: un dueño de casa necesita ayuda, escribe en un sitio gigante de leads, y tú terminas pagando $40–60 por lead — para trabajos que la mitad de las veces no responden.">
+    We're tired of the same story: a homeowner needs help, types into a giant lead-gen site, and you end up paying $40–60 per lead — for jobs that ghost you half the time.
+  </p>
+
+  <div class="compare">
+    <div class="col them">
+      <h3 data-en="Big lead-gen sites" data-es="Sitios grandes de leads">Big lead-gen sites</h3>
+      <ul>
+        <li data-en="Sold to 4–5 contractors per lead" data-es="Vendido a 4–5 contratistas por lead">Sold to 4–5 contractors per lead</li>
+        <li data-en="$40–60 per lead, paid upfront" data-es="$40–60 por lead, pagado por adelantado">$40–60 per lead, paid upfront</li>
+        <li data-en="No screening of the homeowner" data-es="Sin verificar al dueño">No screening of the homeowner</li>
+        <li data-en="Refunds are a fight" data-es="Los reembolsos son una pelea">Refunds are a fight</li>
+      </ul>
+    </div>
+    <div class="col us">
+      <h3 data-en="Home Keep" data-es="Home Keep">Home Keep</h3>
+      <ul>
+        <li data-en="Homeowner picks ONE contractor" data-es="El dueño elige UN contratista">Homeowner picks ONE contractor</li>
+        <li data-en="10–15% on completed jobs only" data-es="10–15% solo en trabajos completados">10–15% on completed jobs only</li>
+        <li data-en="Homeowners describe the job in the app" data-es="Los dueños describen el trabajo en la app">Homeowners describe the job in the app</li>
+        <li data-en="Payments via Stripe — protected both sides" data-es="Pagos por Stripe — protegidos ambos lados">Payments via Stripe — protected both sides</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Signup -->
+  <h2 id="signup" data-en="Reserve your founding spot" data-es="Reserva tu lugar como fundador">Reserve your founding spot</h2>
+  <p style="color: var(--text-soft); margin-bottom: 20px;"
+     data-en="No charge today. We'll email you the week we open. Founding 50 keep lifetime reduced fees."
+     data-es="No hay cargo hoy. Te enviaremos un email la semana que abramos. Los 50 fundadores conservan tarifas reducidas de por vida.">
+    No charge today. We'll email you the week we open. Founding 50 keep lifetime reduced fees.
+  </p>
+
+  <form id="signupForm" class="form-card"
+        action="https://formspree.io/f/YOUR_FORMSPREE_ID"
+        method="POST"
+        onsubmit="handleSubmit(event)">
+    <div class="form-row grid-2">
+      <div>
+        <div class="label" data-en="Your name" data-es="Tu nombre">Your name</div>
+        <input type="text" name="name" required placeholder="Maria Rodriguez">
+      </div>
+      <div>
+        <div class="label" data-en="Phone (optional)" data-es="Teléfono (opcional)">Phone (optional)</div>
+        <input type="tel" name="phone" placeholder="(863) 555-1234">
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="label" data-en="Email" data-es="Correo electrónico">Email</div>
+      <input type="email" name="email" required placeholder="you@example.com">
+    </div>
+
+    <div class="form-row grid-2">
+      <div>
+        <div class="label" data-en="Your trade" data-es="Tu oficio">Your trade</div>
+        <select name="trade" required>
+          <option value="" data-en="-- Select --" data-es="-- Selecciona --">-- Select --</option>
+          <option value="hvac" data-en="HVAC / AC" data-es="HVAC / Aire">HVAC / AC</option>
+          <option value="plumbing" data-en="Plumbing" data-es="Plomería">Plumbing</option>
+          <option value="electrical" data-en="Electrical" data-es="Electricidad">Electrical</option>
+          <option value="roofing" data-en="Roofing" data-es="Techado">Roofing</option>
+          <option value="handyman" data-en="Handyman / General" data-es="Mantenimiento general">Handyman / General</option>
+          <option value="landscaping" data-en="Lawn / Landscaping" data-es="Jardinería">Lawn / Landscaping</option>
+          <option value="pool" data-en="Pool service" data-es="Servicio de piscina">Pool service</option>
+          <option value="pest" data-en="Pest control" data-es="Control de plagas">Pest control</option>
+          <option value="appliance" data-en="Appliance repair" data-es="Reparación de electrodomésticos">Appliance repair</option>
+          <option value="other" data-en="Other" data-es="Otro">Other</option>
+        </select>
+      </div>
+      <div>
+        <div class="label" data-en="Service area (zip)" data-es="Zona de servicio (zip)">Service area (zip)</div>
+        <input type="text" name="zip" required pattern="[0-9]{5}" placeholder="33837">
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="label" data-en="License # (optional but helps)" data-es="Número de licencia (opcional pero ayuda)">License # (optional but helps)</div>
+      <input type="text" name="license" placeholder="CFC1428765">
+    </div>
+
+    <button type="submit" class="submit"
+            data-en="Reserve my founding spot →"
+            data-es="Reservar mi lugar de fundador →">
+      Reserve my founding spot →
+    </button>
+    <p class="fineprint"
+       data-en="We never share your info. Unsubscribe any time."
+       data-es="Nunca compartimos tu info. Cancela cuando quieras.">
+      We never share your info. Unsubscribe any time.
+    </p>
+  </form>
+
+  <!-- Success state -->
+  <div id="successMsg" class="success">
+    <h3 data-en="✅ You're on the list!" data-es="✅ ¡Estás en la lista!">✅ You're on the list!</h3>
+    <p data-en="We'll email you the week we open. Save jenleetechconslt@gmail.com so we don't go to spam."
+       data-es="Te enviaremos un email la semana que abramos. Guarda jenleetechconslt@gmail.com para que no vayamos a spam.">
+      We'll email you the week we open. Save jenleetechconslt@gmail.com so we don't go to spam.
+    </p>
+  </div>
+
+</main>
+
+<!-- ============== FOOTER ============== -->
+<footer>
+  <div class="biz">Jenlee Technical Consultants</div>
+  <div data-en="Davenport, Florida · Family-owned" data-es="Davenport, Florida · Empresa familiar">Davenport, Florida · Family-owned</div>
+  <div style="margin-top: 8px;">
+    <a href="mailto:jenleetechconslt@gmail.com">jenleetechconslt@gmail.com</a>
+  </div>
+  <div style="margin-top: 16px; opacity: 0.6;">
+    © 2026 Jenlee Technical Consultants · <span data-en="All rights reserved" data-es="Todos los derechos reservados">All rights reserved</span>
+  </div>
+</footer>
+
+<script>
+  // ── Language toggle ───────────────────────────────────────────
+  let currentLang = 'en';
+  function toggleLang() {
+    currentLang = currentLang === 'en' ? 'es' : 'en';
+    document.documentElement.lang = currentLang;
+    document.getElementById('langBtn').textContent = currentLang === 'en' ? 'Español' : 'English';
+    // Swap every element with both data-en and data-es
+    document.querySelectorAll('[data-en]').forEach(el => {
+      const newText = el.getAttribute('data-' + currentLang);
+      if (newText) {
+        // For option elements, keep them as options
+        if (el.tagName === 'OPTION') {
+          el.textContent = newText;
+        } else {
+          el.textContent = newText;
+        }
+      }
+    });
+  }
+
+  // ── Form submit handler ──────────────────────────────────────
+  // Until you set up Formspree (or Firebase later), this just shows the success state.
+  // To go live: sign up at formspree.io (free, 50 submits/mo) → replace YOUR_FORMSPREE_ID
+  // in the form action attribute with the ID they give you.
+  function handleSubmit(e) {
+    e.preventDefault();
+    const form = document.getElementById('signupForm');
+    const success = document.getElementById('successMsg');
+
+    // If the form action still has the placeholder, just show success locally
+    if (form.action.includes('YOUR_FORMSPREE_ID')) {
+      form.style.display = 'none';
+      success.classList.add('show');
+      console.log('Form data (preview mode):', Object.fromEntries(new FormData(form)));
+      return;
+    }
+
+    // Real submit
+    const data = new FormData(form);
+    fetch(form.action, {
+      method: 'POST',
+      body: data,
+      headers: { 'Accept': 'application/json' }
+    }).then(r => {
+      if (r.ok) {
+        form.style.display = 'none';
+        success.classList.add('show');
+      } else {
+        alert(currentLang === 'es' ? 'Error al enviar. Inténtalo de nuevo.' : 'Submit failed. Please try again.');
+      }
+    }).catch(() => {
+      alert(currentLang === 'es' ? 'Error de conexión.' : 'Network error.');
+    });
+  }
+</script>
+</body>
+</html>
