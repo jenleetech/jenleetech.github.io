@@ -54,6 +54,9 @@
   .tier .t-desc{font-size:12px;color:var(--dim);line-height:1.5;margin-top:8px;}
   .tier.featured{border:2px solid var(--blue);background:#0e1a26;position:relative;}
   .tier.featured .t-desc{color:var(--muted);}
+  a.tier{display:block;color:inherit;transition:border-color .15s ease, transform .15s ease;}
+  a.tier:hover{border-color:var(--blue-l);transform:translateY(-3px);}
+  .t-cta{font-family:var(--mono);font-size:12px;color:var(--blue-l);margin-top:14px;}
   .pop{position:absolute;top:-9px;left:14px;background:var(--blue);color:#fff;font-size:10px;font-family:var(--mono);padding:2px 8px;border-radius:5px;}
   .box{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:22px;margin-top:14px;}
   .box h2{font-size:16px;font-weight:500;display:flex;align-items:center;gap:8px;}
@@ -116,22 +119,25 @@
   <section id="plans">
     <span class="label">// retainer plans</span>
     <div class="grid">
-      <div class="card tier">
+      <a href="https://calendly.com/jenleetechconslt/30min" class="card tier">
         <p class="t-name">essential</p>
         <p class="t-price">$400<small>/mo</small></p>
         <p class="t-desc">~5 hrs/mo · monitoring, small fixes, email support</p>
-      </div>
-      <div class="card tier featured">
+        <p class="t-cta">Get started →</p>
+      </a>
+      <a href="https://calendly.com/jenleetechconslt/30min" class="card tier featured">
         <span class="pop">popular</span>
         <p class="t-name">growth</p>
         <p class="t-price">$900<small>/mo</small></p>
         <p class="t-desc">~12 hrs/mo · fixes, small features, priority support</p>
-      </div>
-      <div class="card tier">
+        <p class="t-cta">Get started →</p>
+      </a>
+      <a href="https://calendly.com/jenleetechconslt/30min" class="card tier">
         <p class="t-name">partner</p>
         <p class="t-price">$1,800<small>/mo</small></p>
         <p class="t-desc">~25 hrs/mo · ongoing dev, features, planning calls</p>
-      </div>
+        <p class="t-cta">Get started →</p>
+      </a>
     </div>
   </section>
 
